@@ -4,7 +4,7 @@
 
 // Определи, есть ли во входной строке номер СНИЛС.
 function hasSNILS(string) {
-    const regexp = (\d{3}-){2}\d{3}\s\d{2};
+    const regexp = /(\d{3}-){2}\d{3}\s\d{2}/;
     return regexp.test(string);
 
 }
@@ -12,22 +12,22 @@ function hasSNILS(string) {
 
 // Найди и верни номер СНИЛС из строки.
 function grabSNILS(string) {
-    const regexp = (\d{3}-){2}\d{3}\s\d{2};
+    const regexp = /(\d{3}-){2}\d{3}\s\d{2}/;
     return string.match(regexp)[0];
 }
 
 
 // Найди и верни все номера СНИЛС, что есть в строке.
 function grabAllSNILS(string) {
-    const regexp = (\d{3}-){2}\d{3}\s\d{2};
-    return string.matchAll(regexp);
+    const regexp = /(\d{3}-){2}\d{3}\s\d{2}/;
+    return string.match(regexp);
 }
 
 //console.log(grabAllSNILS("The numbers are 350-802-074 94, 234-600-142 22, and 013-605-876 94"))
 
 // Зашифруй номера СНИЛС. Example: XXX-XXX-XXX 30.
 function hideAllSNILS(string) {
-    const regexp = (\d{3}-){2}\d{3}\s\d{2};
+    const regexp = /(\d{3}-){2}\d{3}\s\d{2}/;
     return string.replace(regexp, "XXX-XXX-XXX");
 }
 
@@ -36,8 +36,8 @@ function hideAllSNILS(string) {
 // Отформатируй все номера СНИЛС, чтобы использовались правильные разделители:
 // '48001443027', '480.014.430.27', и '480--014--430 27' должны превратиться в '480-014-430 27'.
 function formatSNILS(string) {
-    let regexp = (\d{3}){2}\d{3}\d{2};
-    return string.replace(regexp,  $1-$2-$3 $4);
+    let regexp = /(\d{3}){2}\d{3}\d{2}/;
+    return string.replace(regexp,  $1-$2-$3);
 }
 
 module.exports = {
