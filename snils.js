@@ -5,20 +5,22 @@
 // Определи, есть ли во входной строке номер СНИЛС.
 function hasSNILS(string) {
     const regex = (\d{3}-){2}\d{3}\s\d{2};
-    return regex.string();
+    return regex.test(string);
 
 }
 
 
 // Найди и верни номер СНИЛС из строки.
 function grabSNILS(string) {
-
+    const regex = (\d{3}-){2}\d{3}\s\d{2};
+    return string.match(regex)[0];
 }
 
 
 // Найди и верни все номера СНИЛС, что есть в строке.
 function grabAllSNILS(string) {
-
+    const regex = (\d{3}-){2}\d{3}\s\d{2};
+    return regex.string();
 }
 
 //console.log(grabAllSNILS("The numbers are 350-802-074 94, 234-600-142 22, and 013-605-876 94"))
