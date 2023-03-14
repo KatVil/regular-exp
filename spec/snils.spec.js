@@ -42,6 +42,12 @@ it("returns a collection of all the SNILS if it finds any SNILS", () => {
     ]);
 });
 
+/*
+it("returns SNILS if find only one SNILS", () => {
+    let allSNILS = grabAllSNILS("The number is XXX-XXX-XXX 22");
+    expect(allSNILS).toEqual(SNILS);
+});*/
+
 it("returns null if does not find any SNILS", () => {
     let allSNILS = grabAllSNILS("The number is XXX-XXX-XXX 22");
     expect(allSNILS).toBeNull();

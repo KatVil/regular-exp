@@ -19,7 +19,7 @@ function grabSNILS(string) {
 
 // Найди и верни все номера СНИЛС, что есть в строке.
 function grabAllSNILS(string) {
-    const regexp = /(\d{3}-){2}\d{3}\s\d{2}/;
+    const regexp = /(\d{3}-){2}\d{3}\s\d{2}/g;
     return string.match(regexp);
 }
 
@@ -27,7 +27,7 @@ function grabAllSNILS(string) {
 
 // Зашифруй номера СНИЛС. Example: XXX-XXX-XXX 30.
 function hideAllSNILS(string) {
-    const regexp = /(\d{3}-){2}\d{3}\s\d{2}/;
+    const regexp = /(\d{3}-){2}\d{3}\s\d{2}/g;
     return string.replace(regexp, "XXX-XXX-XXX");
 }
 
