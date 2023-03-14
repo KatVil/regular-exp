@@ -36,8 +36,8 @@ function hideAllSNILS(string) {
 // Отформатируй все номера СНИЛС, чтобы использовались правильные разделители:
 // '48001443027', '480.014.430.27', и '480--014--430 27' должны превратиться в '480-014-430 27'.
 function formatSNILS(string) {
-    let regexp = /(\d{3}){2}\d{3}\d{2}/;
-    return string.replace(regexp,  $1-$2-$3);
+    let regexp = /(\d{3}).*?(\d{3}).*?(\d{3}).*?(\d{2})/g;
+    return string.replace(regexp,  '$1-$2-$3 $4');
 }
 
 module.exports = {
